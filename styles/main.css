@@ -1,0 +1,50 @@
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+  background-color: cadetblue; }
+
+.row-eq-height {
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+/*Nav Bar*/
+.navbar {
+  padding: 15px 15px;
+  font-size: 1.2em; }
+
+.button {
+  float: right; }
+
+/*Left Box*/
+.box1 {
+  background-color: cadetblue;
+  font-size: 2em;
+  padding: 0 50px; }
+
+.slide-bar {
+  padding-top: 15px; }
+
+.firstDropdown {
+  padding: 20px 0;
+  text-align: center; }
+
+.secondDropdown {
+  text-align: center; }
+
+.list-group-item {
+  font-size: .8em; }
+
+/*Right Box*/
+.box2 {
+  background-color: cadetblue;
+  text-align: center; }
+
+.song-name {
+  font-size: 1.4em; }
+
+#more {
+  float: right; }
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,24 @@
+{
+    "songs": [
+        {
+            "name": "Legs",
+            "album": "Eliminator",
+            "artist": "ZZ Top"
+        },
+        {
+            "name": "Another Brick in the Wall",
+            "album": "The Wall",
+            "artist": "Pink Floyd"
+        },
+        {
+            "name": "Welcome to the Jungle",
+            "album": "Appetite for Destruction",
+            "artist": "Guns & Roses"
+        },
+        {
+            "name": "Ironic",
+            "album": "Jagged Little Pill",
+            "artist": "Alanis Morissette"
+        }
+    ]
+}

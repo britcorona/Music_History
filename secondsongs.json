@@ -1,0 +1,24 @@
+{
+    "songs": [
+        {
+            "name": "The Logical Song",
+            "album": "Breakfast in America",
+            "artist": "Supertramp"
+        },
+        {
+            "name": "Faded",
+            "album": "The Nightday",
+            "artist": "Zhu"
+        },
+        {
+            "name": "Stars Come Out",
+            "album": "No Clue",
+            "artist": "Zedd"
+        },
+        {
+            "name": "Bad Blood",
+            "album": "1989",
+            "artist": "Taylor Swift"
+        }
+    ]
+}

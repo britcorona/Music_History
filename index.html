@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Nashville Software School</title>
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+    <ul class="nav nav-pills">
+      <li role="presentation" class="active"><a href="#">Profile</a></li>
+      <li role="presentation"><a href="#">View Music</a></li>
+      <li role="presentation"><a href="#">Add Music</a></li>
+    </ul>
+
+<button type="button" class="btn btn-default btn-lg button">
+  <span class="glyphicon glyphicon-step-forward" aria-hidden="true"></span>
+</button>
+<button type="button" class="btn btn-default btn-lg button">
+  <span class="glyphicon glyphicon-pause" aria-hidden="true"></span>
+</button>
+<button type="button" class="btn btn-default btn-lg button">
+  <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+</button>
+<button type="button" class="btn btn-default btn-lg button">
+  <span class="glyphicon glyphicon-step-backward" aria-hidden="true"></span>
+</button>
+
+ </nav> 
+
+<div class="row-eq-height">
+  
+<div class="col-md-4 box1">
+
+<p class="slide-bar">Song Length:</p>
+  <div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+    <span class="sr-only">60% Complete</span>
+  </div>
+</div>
+
+<div class="dropdown firstDropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Artist
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div>
+
+<div class="dropdown secondDropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Album
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div>
+
+<p>
+
+  <div class="list-group">
+  <a href="#" class="list-group-item active">
+    Genre:
+  </a>
+  <a href="#" class="list-group-item">Rock</a>
+  <a href="#" class="list-group-item">Classical</a>
+  <a href="#" class="list-group-item">Pop</a>
+  <a href="#" class="list-group-item">Blues</a>
+</div>
+
+</p>
+
+<button type="button" class="btn btn-default btn-lg">
+  <span class="glyphicon glyphicon-filter" aria-hidden="true"></span> Filter
+
+</button>
+
+</div>
+
+<div class="col-md-8 box2">
+
+   <input id="more" type="button" name="More" value="More">
+
+</div>
+
+</div>
+
+<script src="./bower_components/jquery/dist/jquery.min.js"></script>
+<script data-main="javascript/main" src="bower_components/requirejs/require.js"></script>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
