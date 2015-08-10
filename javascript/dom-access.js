@@ -1,14 +1,14 @@
-define(function() {
+define(["jquery"], function($) {
   var $outputEl = $("#box2");
 
-  var $moreButton = $('#more');
+  // var $submitSongButton = $('#submitSong');
 
   return {
     getOutputElement: function() {
       return $outputEl;
-    },
-    getMoreButton: function() {
-    	return $moreButton;
     }
+    // getsubmitSongButton: function() {
+    // 	return $submitSongButton;
+    // }
   };
 });

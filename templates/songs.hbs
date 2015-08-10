@@ -1,0 +1,11 @@
+{{#each songs}}
+	<div artist="{{artist}}" artist="{{album}}" class="filterArtist">
+	
+		<p class="song-namewbutton">{{name}} | {{artist}} | {{album}} 
+			<button type="button" class="btn btn-default btn-sm" id="deleteButton">
+  			<span class="glyphicon glyphicon-trash" aria-hidden="false"></span>
+			</button>
+		</p>
+{{!-- <button id="deleteButton">Delete</button> --}}
+	</div>
+{{/each}}

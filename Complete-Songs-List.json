@@ -1,0 +1,52 @@
+{
+    "songs": [
+        {
+            "name": "Legs",
+            "album": "Eliminator",
+            "artist": "ZZ Top",
+            "genre": "Rock"
+        },
+        {
+            "name": "Another Brick in the Wall",
+            "album": "The Wall",
+            "artist": "Pink Floyd",
+            "genre": "Rock"
+        },
+        {
+            "name": "Welcome to the Jungle",
+            "album": "Appetite for Destruction",
+            "artist": "Guns & Roses",
+            "genre": "Rock"
+        },
+        {
+            "name": "Ironic",
+            "album": "Jagged Little Pill",
+            "artist": "Alanis Morissette",
+            "genre": "Rock"
+        },
+        {
+            "name": "The Logical Song",
+            "album": "Breakfast in America",
+            "artist": "Supertramp",
+            "genre": "Rock"
+        },
+        {
+            "name": "Faded",
+            "album": "The Nightday",
+            "artist": "Zhu",
+            "genre": "Pop"
+        },
+        {
+            "name": "Stars Come Out",
+            "album": "No Clue",
+            "artist": "Zedd",
+            "genre": "Pop"
+        },
+        {
+            "name": "Bad Blood",
+            "album": "1989",
+            "artist": "Taylor Swift",
+            "genre": "Pop"
+        }
+    ]
+}

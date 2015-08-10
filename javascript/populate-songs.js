@@ -1,33 +1,12 @@
-// define(function() {
-//   var songs = [];
-
-//   return {
-//     querySongs: function() {
-//       $.ajax({
-// 			url: "songs.json",
-// 			async: false
-// 			}).done(function(data) {
-// 				songs = data.songs;
-// 			});
-//     },
-
-//     getSongs: function() {
-//       return songs;
-//     }
-// 	};
-// });
-
-//Trying to change to callback
-
 define(function() {
   return {
     querySongs: function(fevvfeveffe) {
       $.ajax({
-        url: "songs.json"
+        url: "https://torrid-heat-9915.firebaseio.com/.json"
       }).done(function(data){
-        // console.log("fevvfeveffe", fevvfeveffe)
-        fevvfeveffe.call(this, data.songs);
+        fevvfeveffe.call(this, data);
       });
-    }
-  };
+			}
+  }
+		
 });

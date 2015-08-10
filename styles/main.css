@@ -1,26 +1,20 @@
 body {
-  font: 100% Helvetica, sans-serif;
-  color: #333;
-  background-color: cadetblue; }
+  background-color: #e3e3e3; }
 
-.row-eq-height {
-  display: -webkit-flex;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
-
-/*Nav Bar*/
+/*-----Nav Bar for all Pages-----*/
 .navbar {
   padding: 15px 15px;
-  font-size: 1.2em; }
+  background-color: #89bdd3;
+  font-family: 'Playfair Display', serif; }
 
-.button {
-  float: right; }
+nav ul li {
+  display: inline;
+  text-decoration: none;
+  font-size: 2em; }
 
-/*Left Box*/
+/*-----Music Page-----*/
 .box1 {
-  background-color: cadetblue;
-  font-size: 2em;
+  font-size: 1.5em;
   padding: 0 50px; }
 
 .slide-bar {
@@ -36,15 +30,52 @@ body {
 .list-group-item {
   font-size: .8em; }
 
-/*Right Box*/
-.box2 {
-  background-color: cadetblue;
-  text-align: center; }
+.filter {
+  font-size: .6em;
+  margin-bottom: 10px; }
+
+#artistDropDown {
+  font-size: 5em;
+  margin-bottom: 10px; }
+
+#newGenre {
+  font-size: 2.9em;
+  margin-bottom: 10px; }
+
+.song-namewbutton {
+  font-size: 1.5em; }
 
 .song-name {
-  font-size: 1.4em; }
+  font-size: 1.4em;
+  text-align: center; }
 
-#more {
-  float: right; }
+#deleteButton {
+  font-size: .5em;
+  outline: none;
+  border: none; }
+
+#footer {
+  background-color: #89bdd3;
+  position-bottom: fixed;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 82px;
+  padding-top: 30px; }
+
+/*--------------------End of Music Page-------------------------------------*/
+/*-----Add Songs Page-----*/
+.form-group {
+  width: 35%;
+  text-align: center;
+  font-size: 2em;
+  margin: 0 33%; }
+
+#submitSong {
+  text-align: center;
+  font-size: 1.8em;
+  margin: 3% 33%; }
+
+/*--------------------End of Add Songs Page-------------------------------------*/
 
 /*# sourceMappingURL=main.css.map */

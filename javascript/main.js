@@ -1,56 +1,68 @@
-// requirejs(
-// 	["dom-access", "populate-songs", "get-more-songs"],
-// 	function(access, populate, more){
+requirejs.config({
+  baseUrl: './javascript',
+  paths: {
+    'jquery': '../bower_components/jquery/dist/jquery.min',
+    'firebase': '../bower_components/firebase/firebase',
+    'hbs': '../bower_components/require-handlebars-plugin/hbs',
+    'lodash': '../bower_components/lodash/lodash.min',
+    'bootstrap': '../bower_components/bootstrap/dist/js/bootstrap.min'
+  },
+  shim: {
+    'bootstrap': ['jquery'],
+    'firebase': {
+    	exports: 'Firebase'
+    }
+  }
+});
 
-// 		populate.querySongs();
-// 		songs = populate.getSongs();
-// 		for (var i = 0; i <songs.length; i++) {
-// 		   var songName = songs[i].name;
-// 		   var songArtist = songs[i].artist;
-// 		   var songAlbum = songs[i].album;
-// 		   var songsText = '<div class="song-name">' + "<h3>" + songName + '</h3>' + '<p>' + songArtist + " | " + songAlbum + "</p>" + '<button id="deleteButton">Delete</button>' + "</div>";
-// 		   $("#more").before(songsText);
-//  			}
-
-		// access.getMoreButton().click(function(){
-		// 	more.querySongs();
-		// 	songs = more.getSongs();
-		// 		for (var i = 0; i <songs.length; i++) {
-		// 	   var songName = songs[i].name;
-		// 	   var songArtist = songs[i].artist;
-		// 	   var songAlbum = songs[i].album;
-		// 	   var songsText = '<div class="song-name">' + "<h3>" + songName + '</h3>' + '<p>' + songArtist + " | " + songAlbum + "</p>" + '<button id="deleteButton">Delete</button>' + "</div>";
-		// 	   $("#more").before(songsText);
-	 // 		}
-		// });
-// 		$(document).on('click', '#deleteButton', function(){
-// 			$(this).parent().remove();
-// 		});
-// });
-
-//Trying to change to callback
 requirejs(
-		["dom-access", "populate-songs", "get-more-songs"],
-		function(access, populate, more) {
+		["jquery", "hbs", "firebase", "lodash", "bootstrap", "dom-access", "populate-songs", "addedsongs"],
+		function($, Handlebars, _firebase, _lodash, bootstrap, access, populate, addSong) {
 
-			var displaySongs = function(data) {
-				for (var i = 0; i < data.length; i++) {
-				   var songName = data[i].name;
-				   var songArtist = data[i].artist;
-				   var songAlbum = data[i].album;
-				   var songsText = '<div class="song-name">' + "<h3>" + songName + '</h3>' + '<p>' + songArtist + " | " + songAlbum + "</p>" + '<button id="deleteButton">Delete</button>' + "</div>";
-				   $("#more").before(songsText);
-		 			}
-			}
+		// populate.querySongs(function(data) {
+		// });
 
-		populate.querySongs(displaySongs);
+		var myFirebaseRef = new Firebase("https://torrid-heat-9915.firebaseio.com/");
+			myFirebaseRef.child("songs").on("value", function(snapshot) {
+				var songObjectFromFirebase = snapshot.val();
+  			console.log( snapshot.val() );
 
-		access.getMoreButton().click(function(){
+	  		var songObjectForTemplates = {
+	     		songs: songObjectFromFirebase
+	   		};
+	   		console.log("songObjectForTemplates",songObjectForTemplates);
 
-		more.querySongs(displaySongs);
+	   		require(['hbs!../templates/songs', 'hbs!../templates/artist', 'hbs!../templates/album'], function(songTemplate, artistTemplate, albumTemplate){
+					$("#box2").before(songTemplate(songObjectForTemplates));
+					$("#artistDropDown").append(artistTemplate(songObjectForTemplates));
+					$("#albumDropDown").append(albumTemplate(songObjectForTemplates));
+				});
 
-	});
+			});
 
+
+		$("#submitSong").click(function(){
+
+   			var newSong = {
+		     "name": $("#name").val(),
+		     "artist": $("#artist").val(),
+		     "album": $("#album").val()
+		   	};
+		   		newSong = JSON.stringify(newSong);
+		   		addSong.addSong(newSong);
+		 	})
+
+		$('#filter').click(function(){
+			var newArtist = $("#artistDropDown").val();
+			console.log(newArtist);
+			$(".filterArtist").hide();
+			$("[artist='"+newArtist+"']").show();
+
+			var newAlbum = $("#albumDropDown").val();
+			$("[artist='"+newAlbum+"']").show();
+			console.log(newAlbum);
+		});
+	
 		$(document).on('click', '#deleteButton', function(){
 			$(this).parent().remove();
 		});
