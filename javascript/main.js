@@ -17,7 +17,7 @@ requirejs.config({
 
 requirejs(
 		["jquery", "hbs", "firebase", "lodash", "bootstrap", "dom-access", "populate-songs", "addedsongs"],
-		function($, Handlebars, _firebase, _lodash, bootstrap, access, populate, addSong) {
+		function($, Handlebars, _firebase, _, bootstrap, access, populate, addSong) {
 
 		// populate.querySongs(function(data) {
 		// });
@@ -25,12 +25,12 @@ requirejs(
 		var myFirebaseRef = new Firebase("https://torrid-heat-9915.firebaseio.com/");
 			myFirebaseRef.child("songs").on("value", function(snapshot) {
 				var songObjectFromFirebase = snapshot.val();
-  			console.log( snapshot.val() );
+  			//console.log( snapshot.val() );
 
 	  		var songObjectForTemplates = {
 	     		songs: songObjectFromFirebase
 	   		};
-	   		console.log("songObjectForTemplates",songObjectForTemplates);
+	   		//console.log("songObjectForTemplates",songObjectForTemplates);
 
 	   		require(['hbs!../templates/songs', 'hbs!../templates/artist', 'hbs!../templates/album'], function(songTemplate, artistTemplate, albumTemplate){
 					$("#box2").before(songTemplate(songObjectForTemplates));
@@ -54,18 +54,23 @@ requirejs(
 
 		$('#filter').click(function(){
 			var newArtist = $("#artistDropDown").val();
-			console.log(newArtist);
 			$(".filterArtist").hide();
+			// $("#albumDropDown option").hide();
 			$("[artist='"+newArtist+"']").show();
+		});
 
-			var newAlbum = $("#albumDropDown").val();
-			$("[artist='"+newAlbum+"']").show();
-			console.log(newAlbum);
+		$("#reset").click(function(){
+			$(".filterArtist").show();
 		});
-	
-		$(document).on('click', '#deleteButton', function(){
-			$(this).parent().remove();
-		});
+
+		$( document ).on( "click", "#deleteButton", function() {
+		   var titleKey = $(this).parent().attr("key");
+		   	$(this).parent().slideUp();
+		   	console.log("titleKey", titleKey);
+		   var fb = new Firebase('https://torrid-heat-9915.firebaseio.com/songs/' + titleKey);
+		   	fb.remove();
+ });
+
 });
 
 

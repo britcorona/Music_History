@@ -1,11 +1,12 @@
 {{#each songs}}
-	<div artist="{{artist}}" artist="{{album}}" class="filterArtist">
+	<div artist="{{artist}}" album="{{album}}" key="{{@key}}" class="filterArtist">
 	
-		<p class="song-namewbutton">{{name}} | {{artist}} | {{album}} 
-			<button type="button" class="btn btn-default btn-sm" id="deleteButton">
-  			<span class="glyphicon glyphicon-trash" aria-hidden="false"></span>
+			<button type="button" class="btn btn-default btn-md" id="deleteButton">
+  				<span class="glyphicon glyphicon-trash" aria-hidden="false"></span>
 			</button>
-		</p>
-{{!-- <button id="deleteButton">Delete</button> --}}
+
+			<p class="song-namewbutton">{{name}} | {{artist}} | {{album}}</p>
+			
+
 	</div>
 {{/each}}
